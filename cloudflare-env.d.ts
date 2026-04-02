@@ -6,7 +6,7 @@ declare namespace Cloudflare {
 		IMAGES: ImagesBinding;
 		ASSETS: Fetcher;
 		NEXTJS_ENV: string;
-		WORKER_SELF_REFERENCE: Fetcher /* tls-shop */;
+		WORKER_SELF_REFERENCE: Fetcher /* tlc-shop */;
 	}
 }
 interface CloudflareEnv extends Cloudflare.Env {}
