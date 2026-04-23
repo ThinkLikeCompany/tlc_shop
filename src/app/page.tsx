@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Grid, Heading, Button } from "@radix-ui/themes";
+import { Box, Flex, Text, Grid, Heading, TextField, Button } from "@radix-ui/themes";
 import NavBarButtons from "./NavBarButtons";
 import Image from "next/image";
 export default function Home() {
@@ -16,6 +16,7 @@ export default function Home() {
               banner-start] min(86vh,970px) [banner-end
               favourite-start] min(80vh,847px) [favourite-end
               vouchers-start] min(83vh,930px) [vouchers-end
+              community-start] min(60vh,623px) [community-end
               ]">
         <Flex asChild direction="column" className="relative " gap="5" gridColumn="content" gridRow="hero">
           <section aria-label="Hero Section">
@@ -89,6 +90,14 @@ export default function Home() {
 
             </Box>
           </section>
+        </Flex>
+        <Flex gridRow="community" gridColumn="edge-left / edge-right" className="bg-[#E5C643]" align="center" justify="center" direction="column" gap="2">
+          <Heading size="8" as="h4" weight="bold" className="text-white max-w-[40%] text-center">{'JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO'.toUpperCase()}</Heading>
+          <Text size='4' className="text-[#fffcf8] text-[32px]">{'Type your email down below and be young wild generation'}</Text>
+          <div className="flex items-center bg-white rounded-[10px] py-2 px-4 w-[clamp(0px,24%,574px)]">
+            <input type="email" placeholder="Add your email here" aria-label="Email address" autoComplete="email" className="flex-1 outline-none bg-transparent text-sm placeholder:text-gray-400" />
+            <button className="shrink-0 bg-black text-white py-1 px-4 rounded-md text-sm transition-transform active:scale-95">Send</button>
+          </div>
         </Flex>
       </Grid>
     </Box>
