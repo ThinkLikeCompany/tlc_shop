@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Theme } from '@radix-ui/themes'
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,12 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Theme accentColor="amber" grayColor="slate" style={{
-          backgroundColor: "var(--amber-5)",
-        }}>
-          {children}
-        </Theme>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-amber-200`}>
+        {children}
       </body>
     </html>
   );
