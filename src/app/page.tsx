@@ -2,6 +2,12 @@ import NavBarButtons from "./NavBarButtons";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  SiFacebook,
+  SiGithub,
+  SiInstagram,
+  SiYoutube,
+} from "@icons-pack/react-simple-icons";
 
 const gridTemplateColumns =
   "[edge-left] 4.5vh [content] 1fr 4.5vh [edge-right]";
@@ -13,11 +19,17 @@ banner-start] min(86vh,970px) [banner-end
 favourite-start] min(80vh,847px) [favourite-end
 vouchers-start] min(83vh,930px) [vouchers-end
 community-start] min(60vh,623px) [community-end
-sitemap-start] min(50vh,623px) [sitemap-end
+sitemap-start] min(43vh,545px) [sitemap-end
 ]
 `;
 
 export default function Home() {
+  const sitemapLinks = [
+    { title: "Company", links: ["About", "Blog", "Jobs"] },
+    { title: "Quick link", links: ["Help", "Support", "Contact"] },
+    { title: "Legal", links: ["Terms", "Privacy"] },
+  ];
+
   return (
     <div className="h-full w-dvw px-1 pt-[12vh] md:px-[3.5vw]">
       <div
@@ -26,7 +38,7 @@ export default function Home() {
       >
         <section
           aria-label="Hero Section"
-          className="relative flex flex-col gap-5 [grid-column:content] [grid-row:hero]"
+          className="relative [grid-column:content] [grid-row:hero] flex flex-col gap-5"
         >
           <header className="flex justify-between">
             <div className="flex items-center gap-2">
@@ -40,9 +52,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div
-          className="flex flex-row items-center justify-between bg-[#E8D96B] px-[4.5vh] [grid-column:edge-left_/_edge-right] [grid-row:brands]"
-        >
+        <div className="[grid-column:edge-left_/_edge-right] [grid-row:brands] flex flex-row items-center justify-between bg-[#E8D96B] px-[4.5vh]">
           {["Him", "Ober", "Shopify", "Lacoste", "Levi's", "amazon"].map(
             (item) => (
               <span key={item} className="text-white">
@@ -54,7 +64,7 @@ export default function Home() {
 
         <section
           aria-label="new arrivals"
-          className="mt-[2vh] flex flex-col gap-9 [grid-column:content] [grid-row:arrival]"
+          className="[grid-column:content] [grid-row:arrival] mt-[2vh] flex flex-col gap-9"
         >
           <h4 className="font-bold">{"New Arrivals".toUpperCase()}</h4>
           <div className="grid flex-1 grid-cols-3 gap-5">
@@ -72,13 +82,11 @@ export default function Home() {
           </div>
         </section>
 
-        <div
-          className="bg-amber-500 [grid-column:edge-left_/_edge-right] [grid-row:banner]"
-        />
+        <div className="[grid-column:edge-left_/_edge-right] [grid-row:banner] bg-amber-500" />
 
         <section
           aria-label="Favourite Section"
-          className="mt-[min(4vh,190px)] flex flex-col gap-9 [grid-column:content] [grid-row:favourite]"
+          className="[grid-column:content] [grid-row:favourite] mt-[min(4vh,190px)] flex flex-col gap-9"
         >
           <h4 className="font-bold">{"Your Favourite".toUpperCase()}</h4>
           <div className="grid flex-1 grid-cols-2 gap-3">
@@ -96,7 +104,7 @@ export default function Home() {
 
         <section
           aria-label="vouchers section"
-          className="mx-[min(118px,9vh)] my-[min(2vh,220px)] flex justify-between [grid-column:content] [grid-row:vouchers]"
+          className="[grid-column:content] [grid-row:vouchers] mx-[min(118px,9vh)] my-[min(2vh,220px)] flex justify-between"
         >
           <div className="mr-[min(340px,25%)] flex flex-1 flex-col items-center justify-center gap-3">
             <h4 className="max-w-[65%] text-center text-5xl font-bold">
@@ -114,9 +122,7 @@ export default function Home() {
           <div className="flex-1 bg-purple-200" />
         </section>
 
-        <div
-          className="flex flex-col items-center justify-center gap-2 bg-[#E5C643] [grid-column:edge-left_/_edge-right] [grid-row:community]"
-        >
+        <div className="[grid-column:edge-left_/_edge-right] [grid-row:community] flex flex-col items-center justify-center gap-2 bg-[#E5C643]">
           <h4 className="max-w-[40%] text-center text-[35px] font-bold text-white">
             {"JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO".toUpperCase()}
           </h4>
@@ -134,6 +140,51 @@ export default function Home() {
             <Button type="submit" size="sm">
               Send
             </Button>
+          </div>
+        </div>
+        <div
+          className="[grid-column:edge-left_/_edge-right] [grid-row:sitemap] grid content-center items-start gap-4 bg-black px-[5%]"
+          style={{ gridTemplateColumns: "3fr 2fr" }}
+        >
+          <div aria-label="sitemap-socials">
+            <h4 className="text-[40px] font-black text-white">FASHION</h4>
+            <p className="max-w-[240px] text-wrap text-[#8e8e8e]">
+              Complete your style with awesome clothes from us.
+            </p>
+            <div className="my-4 flex flex-row gap-2">
+              {[SiFacebook, SiInstagram, SiYoutube, SiGithub].map((Icon, i) => (
+                <Icon
+                  key={i}
+                  className="h-6 w-6 rounded-md bg-[#e8d96b] p-1 text-black"
+                />
+              ))}
+            </div>
+          </div>
+          <div
+            aria-label="sitemap-links"
+            className="grid gap-y-3"
+            style={{
+              gridTemplateColumns: `repeat(${sitemapLinks.length},minmax(0,1fr))`,
+            }}
+          >
+            {sitemapLinks.flatMap(({ title, links }, col) => [
+              <span
+                key={`${col}-title`}
+                className="font-bold text-[#D9D9D9]"
+                style={{ gridColumn: col + 1, gridRow: 1 }}
+              >
+                {title}
+              </span>,
+              ...links.map((link, row) => (
+                <span
+                  key={`${col}-${row}`}
+                  className="text-[#8E8E8E]"
+                  style={{ gridColumn: col + 1, gridRow: row + 2 }}
+                >
+                  {link}
+                </span>
+              )),
+            ])}
           </div>
         </div>
       </div>
