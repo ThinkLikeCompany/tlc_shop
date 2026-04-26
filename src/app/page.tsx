@@ -10,16 +10,16 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 const gridTemplateColumns =
-  "[edge-left] 4.5vh [content] 1fr 4.5vh [edge-right]";
+  "[edge-left] min(4.68vw,75px) [content] 1fr min(4.68vw,75px) [edge-right]";
 const gridTemplateRows = `
-[hero-start] min(86vh,970px) [hero-end
-brands-start] min(8vh,186px) [brands-end
-arrival-start] min(86vh,970px) [arrival-end
-banner-start] min(86vh,970px) [banner-end
-favourite-start] min(80vh,847px) [favourite-end
-vouchers-start] min(83vh,930px) [vouchers-end
-community-start] min(60vh,623px) [community-end
-sitemap-start] min(43vh,545px) [sitemap-end
+[hero-start] min(67.6vh,811.5px) [hero-end
+brands-start] min(11.6vh,139.5px) [brands-end
+arrival-start] min(76.4vh,917.25px) [arrival-end
+banner-start] min(67.3vh,727.5px) [banner-end
+favourite-start] min(59vh,635px) [favourite-end
+vouchers-start] min(49.5vh,532.5px) [vouchers-end
+community-start] min(43vh,467px) [community-end
+sitemap-start] min(38vh,408.5px) [sitemap-end
 ]
 `;
 
@@ -31,14 +31,14 @@ export default function Home() {
   ];
 
   return (
-    <div className="h-full w-dvw px-1 pt-[12vh] md:px-[3.5vw]">
+    <div className="w-vw pt-[14vh]">
       <div
-        className="mx-auto grid w-full max-w-[1920px] bg-white pt-[2vh]"
+        className="mx-auto grid w-full max-w-[min(90vw,1440px)] bg-white"
         style={{ gridTemplateColumns, gridTemplateRows }}
       >
         <section
           aria-label="Hero Section"
-          className="relative [grid-column:content] [grid-row:hero] flex flex-col gap-5"
+          className="relative [grid-column:content] [grid-row:hero-start/hero-end] flex flex-col gap-5 pt-[min(2.8vh,34.5px)] pb-[min(49.5px,4.1vh)]"
         >
           <header className="flex justify-between">
             <div className="flex items-center gap-2">
@@ -47,12 +47,10 @@ export default function Home() {
             </div>
             <NavBarButtons />
           </header>
-          <div className="relative flex-1 rounded-t-xl bg-gray-100">
-            TODO: Hero MainSection
-          </div>
+          <div className="relative flex-1 rounded-t-xl bg-gray-100"></div>
         </section>
 
-        <div className="[grid-column:edge-left_/_edge-right] [grid-row:brands] flex flex-row items-center justify-between bg-[#E8D96B] px-[4.5vh]">
+        <div className="[grid-column:edge-left_/_edge-right] [grid-row:brands] flex h-full flex-row items-center justify-between bg-[#E8D96B]">
           {["Him", "Ober", "Shopify", "Lacoste", "Levi's", "amazon"].map(
             (item) => (
               <span key={item} className="text-white">
@@ -64,21 +62,27 @@ export default function Home() {
 
         <section
           aria-label="new arrivals"
-          className="[grid-column:content] [grid-row:arrival] mt-[2vh] flex flex-col gap-9"
+          className="[grid-column:content] [grid-row:arrival] flex min-w-0 flex-col pt-[min(49.5px,4.1vh)]"
         >
-          <h4 className="font-bold">{"New Arrivals".toUpperCase()}</h4>
-          <div className="grid flex-1 grid-cols-3 gap-5">
-            {["Hoodies & Sweetshirt", "Coats & parkas", "Tees & T-Shirt"].map(
-              (item) => (
-                <div key={item} className="flex flex-col gap-2">
-                  <div className="max-h-[704px] flex-1 bg-blue-300" />
-                  <div className="flex flex-col">
-                    <span>{item}</span>
-                    <span>Explore Now!</span>
-                  </div>
+          <h4 className="text-[29px] leading-[1.5] font-black">
+            {"New Arrivals".toUpperCase()}
+          </h4>
+          <div className="grid max-h-[min(606px,50.5vh)] flex-1 auto-cols-[min(363px,30.2vh)] grid-flow-col gap-16 overflow-x-auto">
+            {[
+              "Hoodies & Sweetshirt",
+              "Coats & parkas",
+              "Tees & T-Shirt",
+              "Jeans",
+              "Jackets",
+            ].map((item) => (
+              <div key={item} className="flex flex-col gap-2">
+                <div className="max-h-[min(528px,44vh)] flex-1 bg-blue-300" />
+                <div className="flex flex-col">
+                  <span>{item}</span>
+                  <span>Explore Now!</span>
                 </div>
-              ),
-            )}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -106,7 +110,7 @@ export default function Home() {
           aria-label="vouchers section"
           className="[grid-column:content] [grid-row:vouchers] mx-[min(118px,9vh)] my-[min(2vh,220px)] flex justify-between"
         >
-          <div className="mr-[min(340px,25%)] flex flex-1 flex-col items-center justify-center gap-3">
+          <div className="mr-[min(340px,25%)] grid gap-3">
             <h4 className="max-w-[65%] text-center text-5xl font-bold">
               {"Download APP & Get The Voucher".toUpperCase()}
             </h4>
