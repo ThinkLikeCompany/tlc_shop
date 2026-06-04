@@ -12,14 +12,14 @@ import {
 const gridTemplateColumns =
   "[edge-left] min(4.68vw,75px) [content] 1fr min(4.68vw,75px) [edge-right]";
 const gridTemplateRows = `
-[hero-start] min(67.6vh,811.5px) [hero-end
-brands-start] min(11.6vh,139.5px) [brands-end
-arrival-start] min(76.4vh,917.25px) [arrival-end
-banner-start] min(60.5vh,726px) [banner-end
-favourite-start] min(64.8vh,777.75px) [favourite-end
-vouchers-start] min(95.8vh,1150px) [vouchers-end
-community-start] min(43vh,467px) [community-end
-sitemap-start] min(38vh,408.5px) [sitemap-end
+[hero-start] min(50.72vw,811.5px) [hero-end
+brands-start] min(8.72vw,139.5px) [brands-end
+arrival-start] min(57.33vw,917.25px) [arrival-end
+banner-start] min(45.38vw,726px) [banner-end
+favourite-start] min(48.61vw,777.75px) [favourite-end
+vouchers-start] min(71.88vw,1150px) [vouchers-end
+community-start] min(29.19vw,467px) [community-end
+sitemap-start] min(25.53vw,408.5px) [sitemap-end
 ]
 `;
 
@@ -31,14 +31,14 @@ export default function Home() {
   ];
 
   return (
-    <div className="w-vw pt-[14vh]">
+    <div className="w-vw pt-[10.5vw]">
       <div
         className="mx-auto grid w-full max-w-[min(90vw,1440px)] bg-white"
         style={{ gridTemplateColumns, gridTemplateRows }}
       >
         <section
           aria-label="Hero Section"
-          className="relative [grid-column:content] [grid-row:hero-start/hero-end] flex flex-col gap-5 pt-[min(2.8vh,34.5px)] pb-[min(49.5px,4.1vh)]"
+          className="relative [grid-column:content] [grid-row:hero-start/hero-end] flex flex-col gap-5 pt-[min(2.16vw,34.5px)] pb-[min(49.5px,3.09vw)]"
         >
           <header className="flex justify-between">
             <div className="flex items-center gap-2">
@@ -47,7 +47,34 @@ export default function Home() {
             </div>
             <NavBarButtons />
           </header>
-          <div className="relative flex-1 rounded-t-xl bg-gray-100"></div>
+          <div className="relative flex flex-1 flex-row gap-[min(2.01vw,32.25px)] rounded-t-xl bg-gray-100 px-[min(3.79vw,60.75px)]">
+            <div className="flex-[606] shrink-0 pt-[min(3.6vw,57.75px)]">
+              <h1 className="font-poppins text-[min(72px,4.5vw)]/[1.2] font-black">
+                <span className="relative isolate block before:absolute before:inset-0 before:right-1/4 before:-left-[1/24*100%] before:-z-10 before:-rotate-2 before:bg-white">
+                  {"LET'S"}
+                </span>
+                <span className="block">{"EXPLORE"}</span>
+                <span className="relative isolate block before:absolute before:inset-0 before:right-1/4 before:-left-[1/24*100%] before:-z-10 before:-rotate-2 before:bg-[#EBD96D]">
+                  {"UNIQUE"}
+                </span>
+                <span className="block">{"CLOTHES"}</span>
+              </h1>
+              <p className="mt-[min(1.87vw,30px)] text-[min(24px,1.5vw)]">
+                Live for Influential and Innovative fashion!
+              </p>
+              <Button className="mt-[min(24px,1.5vw)] h-[min(46.125px,2.88vw)] w-[min(165.75px,10.35vw)] text-[min(16.875px,1.05vw)] font-medium uppercase transition-none">
+                Shop Now
+              </Button>
+            </div>
+            <div className="relative flex-[871]">
+              <Image
+                alt="hero image"
+                src="/HeroSectionGirl.png"
+                fill
+                className="object-contain"
+              ></Image>
+            </div>
+          </div>
         </section>
 
         <div className="[grid-column:edge-left_/_edge-right] [grid-row:brands] flex h-full flex-row items-center justify-between bg-[#E8D96B]">
@@ -62,12 +89,12 @@ export default function Home() {
 
         <section
           aria-label="new arrivals"
-          className="[grid-column:content] [grid-row:arrival] flex min-w-0 flex-col gap-[min(6.25vh,75px)] pt-[min(49.5px,4.1vh)]"
+          className="[grid-column:content] [grid-row:arrival] flex min-w-0 flex-col gap-[min(4.69vw,75px)] pt-[min(49.5px,3.09vw)]"
         >
           <h4 className="text-[20px] leading-[1.5] font-black">
             {"New Arrivals".toUpperCase()}
           </h4>
-          <div className="grid max-h-[min(606px,50.5vh)] flex-1 auto-cols-[min(363px,30.2vh)] grid-flow-col gap-16 overflow-x-auto">
+          <div className="grid max-h-[min(606px,37.88vw)] flex-1 auto-cols-[min(363px,22.69vw)] grid-flow-col gap-16 overflow-x-auto">
             {[
               "Hoodies & Sweetshirt",
               "Coats & parkas",
@@ -76,7 +103,7 @@ export default function Home() {
               "Jackets",
             ].map((item) => (
               <div key={item} className="flex flex-col gap-2">
-                <div className="max-h-[min(528px,44vh)] flex-1 bg-blue-300" />
+                <div className="max-h-[min(528px,33vw)] flex-1 bg-blue-300" />
                 <div className="flex flex-col">
                   <span>{item}</span>
                   <span>Explore Now!</span>
@@ -90,7 +117,7 @@ export default function Home() {
 
         <section
           aria-label="Favourite Section"
-          className="[grid-column:content] [grid-row:favourite] mt-[min(11.8vh,142.5px)] flex flex-col gap-9"
+          className="[grid-column:content] [grid-row:favourite] mt-[min(8.91vw,142.5px)] flex flex-col gap-9"
         >
           <h4 className="font-bold">{"Your Favourite".toUpperCase()}</h4>
           <div className="grid flex-1 grid-cols-[repeat(auto-fit,minmax(0,min(39vw,625.5px)))] justify-between gap-3">
@@ -108,7 +135,7 @@ export default function Home() {
 
         <section
           aria-label="vouchers section"
-          className="[grid-column:content] [grid-row:vouchers] mx-[min(88.5px,5.5vw)] my-[min(13.1vh,157.5px)] flex gap-8"
+          className="[grid-column:content] [grid-row:vouchers] mx-[min(88.5px,5.5vw)] my-[min(9.84vw,157.5px)] flex gap-8"
         >
           <div className="my-auto flex-1">
             <div className="flex max-w-[min(380px,23.7vw)] flex-col gap-6">
