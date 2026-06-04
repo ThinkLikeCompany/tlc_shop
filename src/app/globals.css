@@ -83,7 +83,7 @@
 }
 :root {
   --ratio: calc(16/9);
-  --design-width: 1920;
+  --design-width: 1600;
   --design-height: calc(var(--design-width) * var(--ratio));
 }
 
