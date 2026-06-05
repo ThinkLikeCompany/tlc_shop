@@ -38,12 +38,20 @@ export default function Home() {
       >
         <section
           aria-label="Hero Section"
-          className="relative [grid-column:content] [grid-row:hero-start/hero-end] flex flex-col gap-5 pt-[min(2.16vw,34.5px)] pb-[min(49.5px,3.09vw)]"
+          className="relative [grid-column:content] [grid-row:hero-start/hero-end] flex flex-col gap-1 pt-[min(2.16vw,34.5px)] pb-[min(49.5px,3.09vw)] sm:gap-2"
         >
           <header className="flex justify-between">
             <div className="flex items-center gap-2">
-              <Image width={32} height={32} src="/logo32.ico" alt="tlc logo" />
-              <span className="font-extrabold">TLC Shop</span>
+              <Image
+                width={32}
+                height={32}
+                src="/logo32.ico"
+                alt="tlc logo"
+                className="h-6 w-6 md:h-8 md:w-8"
+              />
+              <span className="text-[clamp(14px,1.25vw,18px)] font-extrabold">
+                TLC Shop
+              </span>
             </div>
             <NavBarButtons />
           </header>
@@ -77,62 +85,87 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <div className="[grid-column:edge-left_/_edge-right] [grid-row:brands] flex h-full flex-row items-center justify-between bg-[#E8D96B]"> */}
-        {/*   {["Him", "Ober", "Shopify", "Lacoste", "Levi's", "amazon"].map( */}
-        {/*     (item) => ( */}
-        {/*       <span key={item} className="text-white"> */}
-        {/*         {item} */}
-        {/*       </span> */}
-        {/*     ), */}
-        {/*   )} */}
-        {/* </div> */}
-        {/**/}
-        {/* <section */}
-        {/*   aria-label="new arrivals" */}
-        {/*   className="[grid-column:content] [grid-row:arrival] flex min-w-0 flex-col gap-[min(4.69vw,75px)] pt-[min(49.5px,3.09vw)]" */}
-        {/* > */}
-        {/*   <h4 className="text-[20px] leading-[1.5] font-black"> */}
-        {/*     {"New Arrivals".toUpperCase()} */}
-        {/*   </h4> */}
-        {/*   <div className="grid max-h-[min(606px,37.88vw)] flex-1 auto-cols-[min(363px,22.69vw)] grid-flow-col gap-16 overflow-x-auto"> */}
-        {/*     {[ */}
-        {/*       "Hoodies & Sweetshirt", */}
-        {/*       "Coats & parkas", */}
-        {/*       "Tees & T-Shirt", */}
-        {/*       "Jeans", */}
-        {/*       "Jackets", */}
-        {/*     ].map((item) => ( */}
-        {/*       <div key={item} className="flex flex-col gap-2"> */}
-        {/*         <div className="max-h-[min(528px,33vw)] flex-1 bg-blue-300" /> */}
-        {/*         <div className="flex flex-col"> */}
-        {/*           <span>{item}</span> */}
-        {/*           <span>Explore Now!</span> */}
-        {/*         </div> */}
-        {/*       </div> */}
-        {/*     ))} */}
-        {/*   </div> */}
-        {/* </section> */}
-        {/**/}
-        {/* <div className="[grid-column:edge-left_/_edge-right] [grid-row:banner] bg-amber-500" /> */}
-        {/**/}
-        {/* <section */}
-        {/*   aria-label="Favourite Section" */}
-        {/*   className="[grid-column:content] [grid-row:favourite] mt-[min(8.91vw,142.5px)] flex flex-col gap-9" */}
-        {/* > */}
-        {/*   <h4 className="font-bold">{"Your Favourite".toUpperCase()}</h4> */}
-        {/*   <div className="grid flex-1 grid-cols-[repeat(auto-fit,minmax(0,min(39vw,625.5px)))] justify-between gap-3"> */}
-        {/*     {["Trending on instagram", "All Under $40"].map((item) => ( */}
-        {/*       <div key={item} className="flex flex-col justify-between gap-2"> */}
-        {/*         <div className="max-h-[575px] flex-1 rounded-xl bg-green-300" /> */}
-        {/*         <div className="flex flex-col"> */}
-        {/*           <span>{item}</span> */}
-        {/*           <span>Explore Now!</span> */}
-        {/*         </div> */}
-        {/*       </div> */}
-        {/*     ))} */}
-        {/*   </div> */}
-        {/* </section> */}
-        {/**/}
+        <div className="[grid-column:edge-left_/_edge-right] [grid-row:brands] flex h-full flex-row items-center justify-between bg-[#E8D96B] px-[8.9%]">
+          {[
+            { name: "H&M", file: "HM.svg" },
+            { name: "Obey", file: "OBEY.svg" },
+            { name: "Shopify", file: "shopify.svg" },
+            { name: "Lacoste", file: "LACOSTE.svg" },
+            { name: "Levi's", file: "LEVIs.svg" },
+            { name: "Amazon", file: "amazon.svg" },
+          ].map(({ name, file }) => (
+            <div key={name} className="relative h-[40%] w-[10%] min-w-[40px]">
+              <Image
+                src={`/BrandLogos/${file}`}
+                alt={name}
+                fill
+                className="object-contain mix-blend-multiply"
+              />
+            </div>
+          ))}
+        </div>
+
+        <section
+          aria-label="new arrivals"
+          className="[grid-column:content] [grid-row:arrival] flex min-w-0 flex-col gap-[min(4.69vw,75px)] pt-[min(49.5px,3.09vw)]"
+        >
+          <h4 className="text-[clamp(14px,1.39vw,20px)] leading-[1.5] font-black">
+            {"New Arrivals".toUpperCase()}
+          </h4>
+          <div className="grid max-h-[min(606px,37.88vw)] flex-1 auto-cols-[min(363px,22.69vw)] grid-flow-col justify-center-safe gap-[clamp(8px,4.44vw,64px)] overflow-x-auto">
+            {[
+              { label: "Hoodies & Sweetshirt", image: "/Arrivals/Hoodies.png" },
+              { label: "Coats & parkas", image: "/Arrivals/Coats.png" },
+              { label: "Tees & T-Shirt", image: "/Arrivals/Tees.png" },
+              { label: "Coats & parkas", image: "/Arrivals/Coats.png" },
+              { label: "Tees & T-Shirt", image: "/Arrivals/Tees.png" },
+            ].map(({ label, image }, index) => (
+              <div key={label + index} className="flex flex-col gap-2">
+                <div className="relative max-h-[min(528px,33vw)] flex-1">
+                  <Image
+                    src={image}
+                    alt={label}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="truncate text-[clamp(10px,2.06vw,33px)]">
+                    {label}
+                  </span>
+                  <span className="truncate text-[clamp(8px,1.5vw,24px)]">
+                    Explore Now!
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="[grid-column:edge-left_/_edge-right] [grid-row:banner] bg-amber-500" />
+
+        <section
+          aria-label="Favourite Section"
+          className="[grid-column:content] [grid-row:favourite] mt-[min(8.91vw,142.5px)] flex flex-col gap-[min(36px,2.25vw)]"
+        >
+          <h4 className="text-[clamp(14px,1.39vw,20px)] font-bold uppercase">
+            {"Your Favourite"}
+          </h4>
+          <div className="grid flex-1 grid-cols-[repeat(auto-fit,minmax(0,min(39vw,625.5px)))] justify-between gap-3">
+            {["Trending on instagram", "All Under $40"].map((item) => (
+              <div key={item} className="flex flex-col justify-between gap-2">
+                <div className="max-h-[575px] flex-1 rounded-xl bg-green-300" />
+                <div className="flex flex-col">
+                  <span className="text-[clamp(12px,1.39vw,20px)]">{item}</span>
+                  <span className="text-[clamp(10px,1.11vw,16px)]">
+                    Explore Now!
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* <section */}
         {/*   aria-label="vouchers section" */}
         {/*   className="[grid-column:content] [grid-row:vouchers] mx-[min(88.5px,5.5vw)] my-[min(9.84vw,157.5px)] flex gap-8" */}
@@ -154,7 +187,7 @@ export default function Home() {
         {/*   </div> */}
         {/*   <div className="flex-1 bg-purple-200" /> */}
         {/* </section> */}
-        {/**/}
+
         {/* <div className="[grid-column:edge-left_/_edge-right] [grid-row:community] flex flex-col items-center justify-center gap-2 bg-[#E5C643]"> */}
         {/*   <h4 className="max-w-[40%] text-center text-[35px] font-bold text-white"> */}
         {/*     {"JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO".toUpperCase()} */}
