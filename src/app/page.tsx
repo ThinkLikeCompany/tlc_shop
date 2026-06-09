@@ -55,8 +55,8 @@ export default function Home() {
             </div>
             <NavBarButtons />
           </header>
-          <div className="relative flex flex-1 flex-row gap-[min(2.01vw,32.25px)] rounded-t-xl bg-gray-100 px-[min(3.79vw,60.75px)]">
-            <div className="flex-[606] shrink-0 pt-[min(3.6vw,57.75px)]">
+          <div className="relative flex flex-1 flex-row gap-[min(2.01vw,32.25px)] rounded-xl bg-gray-100 px-[min(3.79vw,60.75px)]">
+            <div className="flex-[606] pt-[min(3.6vw,57.75px)]">
               <h1 className="font-poppins text-[min(72px,4.5vw)]/[1.2] font-black">
                 <span className="relative isolate block before:absolute before:inset-0 before:right-1/4 before:-left-[1/24*100%] before:-z-10 before:-rotate-2 before:bg-white">
                   {"LET'S"}
@@ -70,7 +70,7 @@ export default function Home() {
               <p className="mt-[min(1.87vw,30px)] text-[min(24px,1.5vw)]">
                 Live for Influential and Innovative fashion!
               </p>
-              <Button className="mt-[min(24px,1.5vw)] h-[min(46.125px,2.88vw)] w-[min(165.75px,10.35vw)] text-[min(16.875px,1.05vw)] font-medium uppercase transition-none">
+              <Button className="mt-[min(24px,1.5vw)] h-[min(61.5px,3.84vw)] w-[min(165.75px,10.35vw)] rounded-xs text-[min(16.875px,1.05vw)] font-medium uppercase transition-none">
                 Shop Now
               </Button>
             </div>
@@ -142,7 +142,42 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="[grid-column:edge-left_/_edge-right] [grid-row:banner] bg-amber-500" />
+        <div className="relative [grid-column:edge-left_/_edge-right] [grid-row:banner] flex flex-row bg-gradient-to-t from-[#E0C340] to-[#F9DF56]">
+          <div className="relative w-[calc(100%_*_991_/_1923)] flex-none overflow-hidden">
+            <div className="absolute inset-0">
+              <Image
+                alt="hero image"
+                src="/BannerGirl.png"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
+          </div>
+          <div className="flex-1 bg-gradient-to-t from-[#E0C340] to-[#F9DF56]">
+            <h1 className="font-poppins mt-[min(96.09px,6vw)] font-black">
+              <span className="relative isolate inline text-[min(72px,4.5vw)]/[1.37] uppercase before:absolute before:inset-0 before:-right-[1/24*100%] before:-left-[1/24*100%] before:-z-10 before:-rotate-2 before:bg-white">
+                {"payday"}
+              </span>
+              <span className="block text-[min(72px,4.5vw)]/[1.37] uppercase">
+                {"sale now"}
+              </span>
+            </h1>
+            <p className="mt-[min(1.54vw,24.75px)] max-w-[69%] text-[min(24px,1.5vw)]">
+              {
+                "Spend minimal $100 get 30% off voucher code for your nextpurchase"
+              }
+            </p>
+            <p className="mt-[min(1.54vw,24.75px)] max-w-[69%] text-[min(24px,1.5vw)] font-bold">
+              {"1 June - 10 June 2021"}
+            </p>
+            <p className="max-w-[69%] text-[min(24px,1.5vw)]">
+              {"*Terms & Conditions apply"}
+            </p>
+            <Button className="mt-[min(24px,1.5vw)] h-[min(61.5px,3.84vw)] w-[min(165.75px,10.35vw)] rounded-xs text-[min(16.875px,1.05vw)] font-medium uppercase transition-none">
+              Shop Now
+            </Button>
+          </div>
+        </div>
 
         <section
           aria-label="Favourite Section"
