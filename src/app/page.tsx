@@ -181,20 +181,37 @@ export default function Home() {
 
         <section
           aria-label="Favourite Section"
-          className="[grid-column:content] [grid-row:favourite] mt-[min(8.91vw,142.5px)] flex flex-col gap-[min(36px,2.25vw)]"
+          className="[grid-column:content] [grid-row:favourite] mt-[min(8.91vw,142.5px)] flex flex-col gap-[min(78px,4.8vw)]"
         >
-          <h4 className="text-[clamp(14px,1.39vw,20px)] font-bold uppercase">
+          <h4 className="text-[min(36,2.25vw)] font-bold uppercase">
             {"Your Favourite"}
           </h4>
-          <div className="grid flex-1 grid-cols-[repeat(auto-fit,minmax(0,min(39vw,625.5px)))] justify-between gap-3">
-            {["Trending on instagram", "All Under $40"].map((item) => (
-              <div key={item} className="flex flex-col justify-between gap-2">
-                <div className="max-h-[575px] flex-1 rounded-xl bg-green-300" />
+          <div className="grid flex-1 grid-cols-[repeat(auto-fit,min(39vw,625.5px))] justify-between">
+            {[
+              {
+                label: "Trending on instagram",
+                img: "/favourites/favourite-trending.png",
+              },
+              {
+                label: "All Under $40",
+                img: "/favourites/favourite-under.png",
+              },
+            ].map((item, index) => (
+              <div
+                key={item.label + index}
+                className="flex flex-col justify-between"
+              >
+                <div className="relative max-h-[575px] flex-1 overflow-hidden rounded-xl">
+                  <Image
+                    src={item.img}
+                    alt={item.label}
+                    fill
+                    className="object-cover"
+                  ></Image>
+                </div>
                 <div className="flex flex-col">
-                  <span className="text-[clamp(12px,1.39vw,20px)]">{item}</span>
-                  <span className="text-[clamp(10px,1.11vw,16px)]">
-                    Explore Now!
-                  </span>
+                  <span className="text-[min(1.39vw,20px)]">{item.label}</span>
+                  <span className="text-[min(1.11vw,16px)]">Explore Now!</span>
                 </div>
               </div>
             ))}
