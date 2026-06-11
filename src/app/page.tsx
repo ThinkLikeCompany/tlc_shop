@@ -280,51 +280,54 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        {/* <div */}
-        {/*   className="[grid-column:edge-left_/_edge-right] [grid-row:sitemap] grid content-center items-start gap-4 bg-black px-[5%]" */}
-        {/*   style={{ gridTemplateColumns: "3fr 2fr" }} */}
-        {/* > */}
-        {/*   <div aria-label="sitemap-socials"> */}
-        {/*     <h4 className="text-[40px] font-black text-white">FASHION</h4> */}
-        {/*     <p className="max-w-[240px] text-wrap text-[#8e8e8e]"> */}
-        {/*       Complete your style with awesome clothes from us. */}
-        {/*     </p> */}
-        {/*     <div className="my-4 flex flex-row gap-2"> */}
-        {/*       {[SiFacebook, SiInstagram, SiYoutube, SiGithub].map((Icon, i) => ( */}
-        {/*         <Icon */}
-        {/*           key={i} */}
-        {/*           className="h-6 w-6 rounded-md bg-[#e8d96b] p-1 text-black" */}
-        {/*         /> */}
-        {/*       ))} */}
-        {/*     </div> */}
-        {/*   </div> */}
-        {/*   <div */}
-        {/*     aria-label="sitemap-links" */}
-        {/*     className="grid gap-y-3" */}
-        {/*     style={{ */}
-        {/*       gridTemplateColumns: `repeat(${sitemapLinks.length},minmax(0,1fr))`, */}
-        {/*     }} */}
-        {/*   > */}
-        {/*     {sitemapLinks.flatMap(({ title, links }, col) => [ */}
-        {/*       <span */}
-        {/*         key={`${col}-title`} */}
-        {/*         className="font-bold text-[#D9D9D9]" */}
-        {/*         style={{ gridColumn: col + 1, gridRow: 1 }} */}
-        {/*       > */}
-        {/*         {title} */}
-        {/*       </span>, */}
-        {/*       ...links.map((link, row) => ( */}
-        {/*         <span */}
-        {/*           key={`${col}-${row}`} */}
-        {/*           className="text-[#8E8E8E]" */}
-        {/*           style={{ gridColumn: col + 1, gridRow: row + 2 }} */}
-        {/*         > */}
-        {/*           {link} */}
-        {/*         </span> */}
-        {/*       )), */}
-        {/*     ])} */}
-        {/*   </div> */}
-        {/* </div> */}
+        <div
+          className="[grid-column:edge-left_/_edge-right] [grid-row:sitemap] grid content-center items-start bg-black px-[5.2%]"
+          style={{ gridTemplateColumns: "415fr 415fr 890fr" }}
+        >
+          <div aria-label="sitemap-socials">
+            <h4 className="text-[min(1.875vw,30px)] font-black text-white">
+              FASHION
+            </h4>
+            <p className="text-[min(1.12vw,18px)] text-wrap text-[#8e8e8e]">
+              Complete your style with awesome clothes from us.
+            </p>
+            <div className="mt-[min(24px,1.5vw)] flex flex-row gap-[3.37%]">
+              {[SiFacebook, SiInstagram, SiYoutube, SiGithub].map((Icon, i) => (
+                <Icon
+                  key={i}
+                  className="h-[clamp(16px,2.43vw,39px)] w-[clamp(16px,2.43vw,39px)] rounded-md bg-[#e8d96b] p-1 text-black"
+                />
+              ))}
+            </div>
+          </div>
+          <div
+            aria-label="sitemap-links"
+            className="grid gap-y-[min(1.5vw,24px)]"
+            style={{
+              gridColumnStart: 3,
+              gridTemplateColumns: `repeat(${sitemapLinks.length},minmax(0,1fr))`,
+            }}
+          >
+            {sitemapLinks.flatMap(({ title, links }, col) => [
+              <span
+                key={`${col}-title`}
+                className="text-[min(18px,1.12vw)] font-bold text-[#D9D9D9]"
+                style={{ gridColumn: col + 1, gridRow: 1 }}
+              >
+                {title}
+              </span>,
+              ...links.map((link, row) => (
+                <span
+                  key={`${col}-${row}`}
+                  className="text-[min(18px,1.12vw)] text-[#8E8E8E]"
+                  style={{ gridColumn: col + 1, gridRow: row + 2 }}
+                >
+                  {link}
+                </span>
+              )),
+            ])}
+          </div>
+        </div>
       </div>
     </div>
   );
