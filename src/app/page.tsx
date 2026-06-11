@@ -17,7 +17,7 @@ brands-start] min(8.72vw,139.5px) [brands-end
 arrival-start] min(57.33vw,917.25px) [arrival-end
 banner-start] min(45.38vw,726px) [banner-end
 favourite-start] min(48.61vw,777.75px) [favourite-end
-vouchers-start] min(71.88vw,1150px) [vouchers-end
+vouchers-start] min(53.9vw,862.5px) [vouchers-end
 community-start] min(29.19vw,467px) [community-end
 sitemap-start] min(25.53vw,408.5px) [sitemap-end
 ]
@@ -218,27 +218,47 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section */}
-        {/*   aria-label="vouchers section" */}
-        {/*   className="[grid-column:content] [grid-row:vouchers] mx-[min(88.5px,5.5vw)] my-[min(9.84vw,157.5px)] flex gap-8" */}
-        {/* > */}
-        {/*   <div className="my-auto flex-1"> */}
-        {/*     <div className="flex max-w-[min(380px,23.7vw)] flex-col gap-6"> */}
-        {/*       <h4 className="text-left text-5xl font-bold"> */}
-        {/*         {"Download APP & Get The Voucher".toUpperCase()} */}
-        {/*       </h4> */}
-        {/*       <p className="text-left"> */}
-        {/*         Get 30% off for first transaction using Rondovising mobile app */}
-        {/*         for now. */}
-        {/*       </p> */}
-        {/*       <div className="flex gap-4"> */}
-        {/*         <div className="h-12 w-[min(153px,9.5vw)] rounded-xl bg-blue-300"></div> */}
-        {/*         <div className="h-12 w-[min(153px,9.5vw)] rounded-xl bg-blue-300"></div> */}
-        {/*       </div> */}
-        {/*     </div> */}
-        {/*   </div> */}
-        {/*   <div className="flex-1 bg-purple-200" /> */}
-        {/* </section> */}
+        <section
+          aria-label="vouchers section"
+          className="[grid-column:content] [grid-row:vouchers] mx-[min(89.25px,5.57vw)] my-[min(165px,10.31vw)] flex flex-row justify-between gap-[min(228.75px,14.29vw)]"
+        >
+          <div className="align-center flex flex-[507] flex-col justify-center text-left">
+            <h4 className="text-[min(36px,2.25vw)]/[1.5] font-bold uppercase">
+              {"DOWNLOAD APP & GET THE VOUCHER!"}
+            </h4>
+            <p className="mt-[min(1.92vw,30.75px)] text-[min(18px,1.1vw)]/[1.45]">
+              {
+                "Get 30% off for first transaction using Rondovision mobile app for now."
+              }
+            </p>
+            <div className="mt-[min(3.04vw,48.75px)] flex flex-row justify-start gap-[min(14.25px,0.9vw)]">
+              <div className="relative h-[min(53.25px,3.32vw)] w-[min(153px,9.56vw)] overflow-hidden rounded-xs">
+                <Image
+                  fill
+                  alt="app store"
+                  src="/Downloads/appleStore.png"
+                  className="object-contain"
+                ></Image>
+              </div>
+              <div className="relative h-[min(53.25px,3.32vw)] w-[min(153px,9.56vw)] overflow-hidden">
+                <Image
+                  fill
+                  alt="google store"
+                  src="/Downloads/googleStore.png"
+                  className="object-contain"
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className="relative flex-[671] overflow-hidden">
+            <Image
+              fill
+              alt="match your style"
+              src="/Downloads/Iphone.png"
+              className="object-contain"
+            ></Image>
+          </div>
+        </section>
 
         {/* <div className="[grid-column:edge-left_/_edge-right] [grid-row:community] flex flex-col items-center justify-center gap-2 bg-[#E5C643]"> */}
         {/*   <h4 className="max-w-[40%] text-center text-[35px] font-bold text-white"> */}
