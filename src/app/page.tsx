@@ -260,26 +260,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <div className="[grid-column:edge-left_/_edge-right] [grid-row:community] flex flex-col items-center justify-center gap-2 bg-[#E5C643]"> */}
-        {/*   <h4 className="max-w-[40%] text-center text-[35px] font-bold text-white"> */}
-        {/*     {"JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO".toUpperCase()} */}
-        {/*   </h4> */}
-        {/*   <p className="text-[24px] text-[#fffcf8]"> */}
-        {/*     Type your email down below and be young wild generation */}
-        {/*   </p> */}
-        {/*   <div className="flex w-[clamp(0px,24%,574px)] items-center rounded-[10px] bg-white px-4 py-2"> */}
-        {/*     <Input */}
-        {/*       type="email" */}
-        {/*       placeholder="Add your email here" */}
-        {/*       aria-label="Email address" */}
-        {/*       autoComplete="email" */}
-        {/*       className="border-none shadow-none focus-visible:border-transparent focus-visible:ring-0" */}
-        {/*     /> */}
-        {/*     <Button type="submit" size="sm"> */}
-        {/*       Send */}
-        {/*     </Button> */}
-        {/*   </div> */}
-        {/* </div> */}
+        <div className="[grid-column:edge-left_/_edge-right] [grid-row:community] flex flex-col items-center justify-center bg-[#E5C643]">
+          <h4 className="max-w-[50%] text-center text-[min(2.6vw,42.65px)]/[1.27] font-bold text-white">
+            {"JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO".toUpperCase()}
+          </h4>
+          <p className="mt-[min(1.73vw,27.75px)] text-[min(1.5vw,24px)] text-[#fffcf8]">
+            Type your email down below and be young wild generation
+          </p>
+          <div className="mt-[min(2.29vw,36.75px)] flex h-[min(4.07vw,65.25px)] w-[30%] items-center bg-white px-0.5">
+            <Input
+              type="email"
+              placeholder="Add your email here"
+              aria-label="Email address"
+              autoComplete="email"
+              className="border-none text-[min(18px,1.1vw)] shadow-none focus-visible:border-transparent focus-visible:ring-0"
+            />
+            <Button className="h-[min(50.25px,3.14vw)] rounded-sm text-[min(1.54vw,24.75px)]">
+              Send
+            </Button>
+          </div>
+        </div>
         {/* <div */}
         {/*   className="[grid-column:edge-left_/_edge-right] [grid-row:sitemap] grid content-center items-start gap-4 bg-black px-[5%]" */}
         {/*   style={{ gridTemplateColumns: "3fr 2fr" }} */}
